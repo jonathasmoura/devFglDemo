@@ -23,7 +23,7 @@ namespace devFglDemo.Application.Requests.UserRequests
             if (request.Invalid)
                 return new RequestResult(false, "Ops, não foi possível localizar o usuário", request.Notifications);
 
-            var entity = _userRepository.GetById(request.id);
+            var entity = _userRepository.GetById(request.Id);
             
             
             _userRepository.Delete(entity);

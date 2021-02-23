@@ -7,19 +7,14 @@ namespace devFglDemo.Application.Requests.UserRequests
 {
     public class DeleteUserRequest : Notifiable, IRequest
     {
-        public DeleteUserRequest(){}
-        public DeleteUserRequest(Guid id, string name, string email, string gender)
+        public DeleteUserRequest() { }
+        public DeleteUserRequest(Guid id)
         {
-            Name = name;
-            Email = email;
-            Gender = gender;
+            Id = id;
         }
 
-        public Guid id { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public string Gender { get; set; }
+        public Guid Id { get; set; }
 
-        public void Validate(){}
+        public void Validate() { }
     }
 }

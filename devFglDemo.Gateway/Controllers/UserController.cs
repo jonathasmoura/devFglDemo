@@ -57,7 +57,7 @@ namespace devDemo.Gateway.Controllers
 
         [Route("{id}")]
         [HttpDelete]
-        public RequestResult DeleteUser([FromHeader] Guid id, [FromBody] DeleteUserRequest request, [FromServices] DeleteUserRequestHandler handler)
+        public RequestResult DeleteUser([FromHeader] DeleteUserRequest request, [FromServices] DeleteUserRequestHandler handler)
         {
             return (RequestResult)handler.Handle(request);
         }
