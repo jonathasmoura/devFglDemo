@@ -47,6 +47,11 @@ namespace devDemo.Gateway
             services.AddTransient<InactiveUserByIdRequestHandler, InactiveUserByIdRequestHandler>();
             services.AddTransient<UpdateUserRequestHandler, UpdateUserRequestHandler>();
             services.AddTransient<DeleteUserRequestHandler, DeleteUserRequestHandler>();
+
+             services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "API Demonstração Cartão Ponto", Version = "v1" });
+            });
             // services.AddTransient<IModelRepository, ModelRepository>();
             // services.AddTransient<ModelCommandHandler, ModelCommandHandler>();
 
@@ -61,6 +66,12 @@ namespace devDemo.Gateway
             }
 
             app.UseHttpsRedirection();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API Demonstração Cartão Ponto");
+            });
 
             app.UseRouting();
             app.UseCors(x => x
