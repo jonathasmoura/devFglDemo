@@ -16,6 +16,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 
 namespace devDemo.Gateway
@@ -37,7 +38,8 @@ namespace devDemo.Gateway
             services.AddResponseCompression();
             services.AddMvc();
 
-            services.AddDbContext<DemoContext>(opt => opt.UseInMemoryDatabase("Database"));
+            //services.AddDbContext<DemoContext>(opt => opt.UseInMemoryDatabase("Database"));
+            services.AddDbContext<DemoContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
 
             services.AddScoped<DemoContext, DemoContext>();
             services.AddTransient<IUserRepository, UserRepository>();
