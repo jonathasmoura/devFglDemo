@@ -13,11 +13,13 @@ namespace devDemo.Infra.DataContext
 
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Marca> Marcas { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration(new UserMap());
+            modelBuilder.ApplyConfiguration(new MarcaMap());
 
             modelBuilder.Ignore<Notification>();
         }
