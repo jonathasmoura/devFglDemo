@@ -42,7 +42,9 @@ namespace devDemo.Gateway
             services.AddDbContext<DemoContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
 
             services.AddScoped<DemoContext, DemoContext>();
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IUserV2Repository, UserV2Repository>();
             services.AddTransient<ActiveUserByIdRequestHandler, ActiveUserByIdRequestHandler>();
             services.AddTransient<CreateUserRequestHandler, CreateUserRequestHandler>();
             services.AddTransient<GetUserByIdRequestHandler, GetUserByIdRequestHandler>();
@@ -50,10 +52,10 @@ namespace devDemo.Gateway
             services.AddTransient<UpdateUserRequestHandler, UpdateUserRequestHandler>();
             services.AddTransient<DeleteUserRequestHandler, DeleteUserRequestHandler>();
 
-             services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "API Demonstração Cartão Ponto", Version = "v1" });
-            });
+            services.AddSwaggerGen(c =>
+           {
+               c.SwaggerDoc("v1", new OpenApiInfo { Title = "API Demonstração Cartão Ponto", Version = "v1" });
+           });
             // services.AddTransient<IModelRepository, ModelRepository>();
             // services.AddTransient<ModelCommandHandler, ModelCommandHandler>();
 

@@ -1,9 +1,4 @@
-C:\Users\pc\dev\devFglDemo\devFglDemo.Domain\bin\Debug\netstandard2.0\devFglDemo.Domain.deps.json
-C:\Users\pc\dev\devFglDemo\devFglDemo.Domain\bin\Debug\netstandard2.0\devFglDemo.Domain.dll
-C:\Users\pc\dev\devFglDemo\devFglDemo.Domain\bin\Debug\netstandard2.0\devFglDemo.Domain.pdb
 C:\Users\pc\dev\devFglDemo\devFglDemo.Domain\obj\Debug\netstandard2.0\devFglDemo.Domain.csprojAssemblyReference.cache
 C:\Users\pc\dev\devFglDemo\devFglDemo.Domain\obj\Debug\netstandard2.0\devFglDemo.Domain.AssemblyInfoInputs.cache
 C:\Users\pc\dev\devFglDemo\devFglDemo.Domain\obj\Debug\netstandard2.0\devFglDemo.Domain.AssemblyInfo.cs
 C:\Users\pc\dev\devFglDemo\devFglDemo.Domain\obj\Debug\netstandard2.0\devFglDemo.Domain.csproj.CoreCompileInputs.cache
-C:\Users\pc\dev\devFglDemo\devFglDemo.Domain\obj\Debug\netstandard2.0\devFglDemo.Domain.dll
-C:\Users\pc\dev\devFglDemo\devFglDemo.Domain\obj\Debug\netstandard2.0\devFglDemo.Domain.pdb

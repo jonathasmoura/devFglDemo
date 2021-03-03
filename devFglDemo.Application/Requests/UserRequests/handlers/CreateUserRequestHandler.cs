@@ -10,10 +10,12 @@ namespace devFglDemo.Application.Requests.UserRequests
     {
 
         private readonly IUserRepository _userRepository;
+        private readonly IRepository <User> _repo;
 
-        public CreateUserRequestHandler(IUserRepository userRepository)
+        public CreateUserRequestHandler(IUserRepository userRepository,IRepository <User> repo)
         {
             _userRepository = userRepository;
+            _repo = repo;
         }
 
         public IRequestResult Handle(CreateUserRequest request)
@@ -35,7 +37,8 @@ namespace devFglDemo.Application.Requests.UserRequests
             if (Invalid)
                 return new RequestResult(false, "Ops, não foi possível cadastrar o usuário", request);
 
-            _userRepository.Save(entity);
+            _repo.Create(entity);
+            _repo.SaveChanges();
 
             return new RequestResult(true, "Usuário registrado com sucesso!!!", entity);
 
