@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using devDemo.Infra.DataContext;
 using devDemo.Infra.Repositories;
 using devFglDemo.Application.Contracts;
+using devFglDemo.Application.Requests.MarcaRequests;
 using devFglDemo.Application.Requests.UserRequests;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -38,8 +39,8 @@ namespace devDemo.Gateway
             services.AddResponseCompression();
             services.AddMvc();
 
-            //services.AddDbContext<DemoContext>(opt => opt.UseInMemoryDatabase("Database"));
-            services.AddDbContext<DemoContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
+            services.AddDbContext<DemoContext>(opt => opt.UseInMemoryDatabase("Database"));
+            //services.AddDbContext<DemoContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
 
             services.AddScoped<DemoContext, DemoContext>();
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
@@ -51,14 +52,13 @@ namespace devDemo.Gateway
             services.AddTransient<InactiveUserByIdRequestHandler, InactiveUserByIdRequestHandler>();
             services.AddTransient<UpdateUserRequestHandler, UpdateUserRequestHandler>();
             services.AddTransient<DeleteUserRequestHandler, DeleteUserRequestHandler>();
+            services.AddTransient<IMarcaRepository, MarcaRepository>();
+            services.AddTransient<CreateMarcaRequestHandler, CreateMarcaRequestHandler>();
 
             services.AddSwaggerGen(c =>
            {
                c.SwaggerDoc("v1", new OpenApiInfo { Title = "API Demonstração Cartão Ponto", Version = "v1" });
            });
-            // services.AddTransient<IModelRepository, ModelRepository>();
-            // services.AddTransient<ModelCommandHandler, ModelCommandHandler>();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

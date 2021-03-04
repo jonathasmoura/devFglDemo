@@ -10,13 +10,16 @@ namespace devDemo.Infra.Repositories
 {
     public class MarcaRepository : Repository<Marca>, IMarcaRepository
     {
+        private readonly DemoContext _demoCtx;
         public MarcaRepository(DemoContext demoCtx) : base(demoCtx)
         {
+            _demoCtx = demoCtx;
         }
 
         public bool ExisteMarca(string marca)
         {
-            throw new NotImplementedException();
+            var sql = _demoCtx.Marcas.Any(x => x.Name == marca);
+            return sql;
         }
     }
 }

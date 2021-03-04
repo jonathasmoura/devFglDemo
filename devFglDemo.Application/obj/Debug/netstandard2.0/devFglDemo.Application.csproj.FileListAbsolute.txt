@@ -1,0 +1,12 @@
+C:\Users\pc\dev\devFglDemo\devFglDemo.Application\bin\Debug\netstandard2.0\devFglDemo.Application.deps.json
+C:\Users\pc\dev\devFglDemo\devFglDemo.Application\bin\Debug\netstandard2.0\devFglDemo.Application.dll
+C:\Users\pc\dev\devFglDemo\devFglDemo.Application\bin\Debug\netstandard2.0\devFglDemo.Application.pdb
+C:\Users\pc\dev\devFglDemo\devFglDemo.Application\bin\Debug\netstandard2.0\devFglDemo.Domain.dll
+C:\Users\pc\dev\devFglDemo\devFglDemo.Application\bin\Debug\netstandard2.0\devFglDemo.Domain.pdb
+C:\Users\pc\dev\devFglDemo\devFglDemo.Application\obj\Debug\netstandard2.0\devFglDemo.Application.csprojAssemblyReference.cache
+C:\Users\pc\dev\devFglDemo\devFglDemo.Application\obj\Debug\netstandard2.0\devFglDemo.Application.AssemblyInfoInputs.cache
+C:\Users\pc\dev\devFglDemo\devFglDemo.Application\obj\Debug\netstandard2.0\devFglDemo.Application.AssemblyInfo.cs
+C:\Users\pc\dev\devFglDemo\devFglDemo.Application\obj\Debug\netstandard2.0\devFglDemo.Application.csproj.CoreCompileInputs.cache
+C:\Users\pc\dev\devFglDemo\devFglDemo.Application\obj\Debug\netstandard2.0\devFglDemo.Application.csproj.CopyComplete
+C:\Users\pc\dev\devFglDemo\devFglDemo.Application\obj\Debug\netstandard2.0\devFglDemo.Application.dll
+C:\Users\pc\dev\devFglDemo\devFglDemo.Application\obj\Debug\netstandard2.0\devFglDemo.Application.pdb
