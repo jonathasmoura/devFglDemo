@@ -16,6 +16,17 @@ namespace devDemo.Infra.Repositories
             _demoCtx = demoCtx;
         }
 
+        public IEnumerable<T> All()
+        {
+            return _demoCtx.Set<T>();
+        }
+
+        public T GetById(Guid id)
+        {
+            var editedEntity = _demoCtx.Set<T>().FirstOrDefault(x => x.Id == id);
+            return editedEntity;
+        }
+
         public void Create(T entity)
         {
             _demoCtx.Set<T>().Add(entity);
@@ -35,15 +46,6 @@ namespace devDemo.Infra.Repositories
             }
         }
 
-        public void Dispose()
-        {
-             if (_demoCtx != null)
-            {
-                _demoCtx.Dispose();
-            }
-                GC.SuppressFinalize(this);
-        }
-
         public void Edit(T entity)
         {
             var editedEntity = _demoCtx.Set<T>().FirstOrDefault(x => x.Id == entity.Id);
@@ -59,13 +61,15 @@ namespace devDemo.Infra.Repositories
         {
             return _demoCtx.Set<T>().Where(predicate);
         }
-
-        public T GetById(Guid id)
-        {
-            var editedEntity = _demoCtx.Set<T>().FirstOrDefault(x => x.Id == id);
-            return editedEntity;
-        }
-
         public void SaveChanges() => _demoCtx.SaveChanges();
+
+        public void Dispose()
+        {
+            if (_demoCtx != null)
+            {
+                _demoCtx.Dispose();
+            }
+            GC.SuppressFinalize(this);
+        }
     }
 }

@@ -13,12 +13,12 @@ namespace devFglDemo.Application.Contracts
         void Delete(Guid id);
         void Edit(T entity);
 
-        //read side (could be in separate Readonly Generic Repository)
+        IEnumerable<T> All();
         T GetById(Guid id);
+
         IEnumerable<T> Filter();
         IEnumerable<T> Filter(Func<T, bool> predicate);
 
-        //separate method SaveChanges can be helpful when using this pattern with UnitOfWork
         void SaveChanges();
     }
 }

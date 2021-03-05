@@ -39,13 +39,12 @@ namespace devDemo.Gateway
             services.AddResponseCompression();
             services.AddMvc();
 
-            services.AddDbContext<DemoContext>(opt => opt.UseInMemoryDatabase("Database"));
-            //services.AddDbContext<DemoContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
+            //services.AddDbContext<DemoContext>(opt => opt.UseInMemoryDatabase("Database"));
+            services.AddDbContext<DemoContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
 
             services.AddScoped<DemoContext, DemoContext>();
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddTransient<IUserRepository, UserRepository>();
-            services.AddTransient<IUserV2Repository, UserV2Repository>();
             services.AddTransient<ActiveUserByIdRequestHandler, ActiveUserByIdRequestHandler>();
             services.AddTransient<CreateUserRequestHandler, CreateUserRequestHandler>();
             services.AddTransient<GetUserByIdRequestHandler, GetUserByIdRequestHandler>();
